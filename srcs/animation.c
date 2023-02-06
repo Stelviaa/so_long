@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 15:44:36 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 19:13:29 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/06 20:33:26 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int	frame_manage(t_game *g)
 	{
 		ft_printf ("\033[36;01mWIN\033[00m\n");
 		free_all(g);
-		system("leaks so_long");
 		exit(0);
 	}
 	g->frame ++;

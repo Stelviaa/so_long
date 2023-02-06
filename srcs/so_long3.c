@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:21:29 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 18:49:36 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/06 20:33:43 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,8 @@ int	verif_map_name(char **argv)
 	{
 		ft_printf("\033[0;31mError\033[0m\n");
 		ft_printf("Extension '.ber' is required for map file\n");
-		system("leaks so_long");
 		return (1);
 	}
-	system("leaks so_long");
 	return (0);
 }
 

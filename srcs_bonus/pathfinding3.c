@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 16:59:51 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/05 18:06:54 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/06 20:33:16 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ void	free_error(t_game *g)
 			free(g->m_pf[i]);
 		g->m_pf[i] = NULL;
 	}
-	system("leaks so_long");
 }
 
 int	general2(t_game *g)
