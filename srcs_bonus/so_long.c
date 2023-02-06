@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:50:05 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 14:19:34 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/06 16:26:15 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,8 @@ int	main(int argc, char **argv)
 		ft_printf("\033[0;31mError\033[0m\nBad numbers of arguments");
 		exit(0);
 	}
+	if (verif_map_name(argv))
+		exit (0);
 	g = malloc(sizeof(t_game));
 	if (!g)
 		return (-1);

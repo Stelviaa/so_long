@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:50:05 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 14:19:45 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/06 15:54:02 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,8 @@ int	main(int argc, char **argv)
 		ft_printf("\033[0;31mError\033[0m\nBad numbers of arguments");
 		exit(0);
 	}
+	if (verif_map_name(argv))
+		exit (0);
 	g = malloc(sizeof(t_game));
 	if (!g)
 		return (-1);
@@ -145,7 +147,6 @@ int	main(int argc, char **argv)
 	general2(g);
 	g->nbr_m_take = 0;
 	initialisation(g);
-	//score(g);
 	mlx_loop_hook(g->mlx, frame_manage, g);
 	mlx_hook(g->win, 2, 0L, player_move, g);
 	mlx_hook(g->win, 17, 0, close_win, g);

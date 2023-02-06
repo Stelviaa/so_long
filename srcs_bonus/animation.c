@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 15:44:36 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 13:50:20 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/06 16:27:56 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	frame_manage(t_game *g)
 	{
 		coins(g);
 	}
-	if (!(g->frame % 1250))
+	if (!(g->frame % 2000))
 		manage_mob(g);
 	if (g->nbr_m_take == g->start_coin && !(g->frame % 750)
 		&& g->bool_anim == 1)

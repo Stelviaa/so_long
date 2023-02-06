@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:50:39 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 14:06:44 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/06 15:46:28 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,5 @@ void	s_move_d(t_game *g);
 void	s_move_u(t_game *g);
 int		find_direction(t_game *g);
 int		verif_mob(t_game *g);
+int		verif_map_name(char **argv);
 #endif
