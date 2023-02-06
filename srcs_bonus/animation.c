@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 15:44:36 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 16:27:56 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/06 20:15:54 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ int	frame_manage(t_game *g)
 	if (!(g->frame % 750))
 	{
 		coins(g);
+		mlx_put_image_to_window(g->mlx, g->win, g->img_e, g->d_wdt, g->d_hgt);
+		if (g->p_x == g->d_wdt && g->p_y == g->d_hgt)
+			mlx_put_image_to_window
+				(g->mlx, g->win, g->img_c, g->p_x, g->p_y);
 	}
 	if (!(g->frame % 2000))
 		manage_mob(g);

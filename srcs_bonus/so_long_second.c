@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:03:47 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 13:58:18 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:31:24 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void	initialisation(t_game *g)
 	g->img_c = mlx_xpm_file_to_image(g->mlx, "img/Player/player1.xpm", &a, &b);
 	g->img_e = mlx_xpm_file_to_image(g->mlx, "img/Door/door.xpm", &a, &b);
 	g->img_s = mlx_xpm_file_to_image(g->mlx, "img/Mob/mob_r.xpm", &a, &b);
+	find_p(g);
 	coins(g);
 	fill_map(g);
 	fill_map2(g);
-	find_p(g);
 	count_money(g);
 	init_mob(g);
 }

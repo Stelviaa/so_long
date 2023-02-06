@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:50:05 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 16:26:15 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:22:20 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,15 @@ void	get_map(t_game *g)
 	char	*map_temp;
 
 	g->m_fd = open(g->m_name, O_RDONLY);
+	if (g->m_fd == -1)
+	{
+		ft_printf("\033[0;31mError\033[0m\nMap name not recognized\n");
+		free_error(g);
+		exit(0);
+	}
 	line = get_next_line(g->m_fd);
-	map_temp = ft_calloc(1, 1);
 	i = 0;
+	map_temp = ft_calloc(1, 1);
 	g->m_wdt_line = ft_strlen(line) - 1;
 	while (line)
 	{
@@ -29,15 +35,10 @@ void	get_map(t_game *g)
 		line = get_next_line(g->m_fd);
 		i ++;
 	}
-	g->m_hgt_line = i;
 	close (g->m_fd);
-	g->m_cnt = ft_split(map_temp, '\n');
-	g->m_hgt = SIZE_TILES * i;
-	g->m_wdt = ft_strlen(g->m_cnt[0]) * SIZE_TILES;
-	if (line)
-		free(line);
-	if (map_temp)
-		free(map_temp);
+	if (g->m_fd == -1)
+		exit(0);
+	get_map2(g, i, line, map_temp);
 }
 
 int	fill_map(t_game *g)

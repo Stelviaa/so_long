@@ -24,7 +24,7 @@ $(NAME):	$(OBJS)
 		make -C libft
 		$(CC) -o $(NAME) $(OBJS) $(LIBS)
 
-bonus:	fclean $(OBJS_BONUS)
+bonus:	$(OBJS_BONUS)
 		make -C libft
 		$(CC) -o $(NAME_BONUS) $(OBJS_BONUS) $(LIBS)
 

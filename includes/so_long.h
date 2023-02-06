@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:50:39 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 15:46:28 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/06 20:17:54 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,4 +110,6 @@ void	s_move_u(t_game *g);
 int		find_direction(t_game *g);
 int		verif_mob(t_game *g);
 int		verif_map_name(char **argv);
+void	get_map2(t_game *g, int i, char *line, char *map_temp);
+int		get_pass_s(t_game *g, int co_y, int co_x);
 #endif

@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:58:23 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/05 17:58:31 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/06 20:19:31 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,16 @@ void	init_mob(t_game *g)
 int	manage_mob(t_game *g)
 {
 	if (find_direction(g) == rand() % 5
-		&& get_pass(g, g->s_y - SIZE_TILES, g->s_x))
+		&& get_pass_s(g, g->s_y - SIZE_TILES, g->s_x))
 		s_move_u(g);
 	else if (find_direction(g) == rand() % 5
-		&& get_pass(g, g->s_y + SIZE_TILES, g->s_x))
+		&& get_pass_s(g, g->s_y + SIZE_TILES, g->s_x))
 		s_move_d(g);
 	else if (find_direction(g) == rand() % 5
-		&& get_pass(g, g->s_y, g->s_x - SIZE_TILES))
+		&& get_pass_s(g, g->s_y, g->s_x - SIZE_TILES))
 		s_move_l(g);
 	else if (find_direction(g) == rand() % 5
-		&& get_pass(g, g->s_y, g->s_x + SIZE_TILES))
+		&& get_pass_s(g, g->s_y, g->s_x + SIZE_TILES))
 		s_move_r(g);
 	if (g->p_x == g->s_x && g->p_y == g->s_y)
 	{
@@ -75,6 +75,23 @@ int	find_direction(t_game *g)
 	if (g->m_cnt[g->s_y / SIZE_TILES + 1][g->s_x / SIZE_TILES + 1] == '0'
 	|| g->m_cnt[g->s_y / SIZE_TILES + 1][g->s_x / SIZE_TILES + 1] == 'C')
 		return (4);
+	else
+		return (0);
+}
+
+int	get_pass_s(t_game *g, int co_y, int co_x)
+{
+	int	i;
+	int	j;
+
+	i = co_y / SIZE_TILES;
+	j = co_x / SIZE_TILES;
+	if (g->bool_anim == 0 && g->m_cnt[i][j] == 'E')
+	{
+		return (1);
+	}
+	if (g->m_cnt[i][j] != '1' && g->m_cnt[i][j] != 'E')
+		return (1);
 	else
 		return (0);
 }

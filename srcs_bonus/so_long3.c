@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:21:29 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 16:36:51 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:21:51 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,16 @@ int	verif_map_name(char **argv)
 		return (1);
 	}
 	return (0);
+}
+
+void	get_map2(t_game *g, int i, char *line, char *map_temp)
+{
+	g->m_hgt_line = i;
+	g->m_cnt = ft_split(map_temp, '\n');
+	g->m_hgt = SIZE_TILES * i;
+	g->m_wdt = ft_strlen(g->m_cnt[0]) * SIZE_TILES;
+	if (line)
+		free(line);
+	if (map_temp)
+		free(map_temp);
 }
