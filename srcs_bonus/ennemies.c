@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:58:23 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 20:19:31 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:14:07 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	get_pass_s(t_game *g, int co_y, int co_x)
 	{
 		return (1);
 	}
-	if (g->m_cnt[i][j] != '1' && g->m_cnt[i][j] != 'E')
+	if (g->m_cnt[i][j] != '1' && g->m_cnt[i][j] != 'E' && g->m_cnt[i][j] != 'C')
 		return (1);
 	else
 		return (0);

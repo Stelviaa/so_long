@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:50:39 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 20:17:54 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/08 15:41:30 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_game{
 	int		bool_e;
 	int		bool_c;
 	int		bool_p;
+	int		bool_s;
 	int		s_x;
 	int		s_y;
 	int		n_move;
@@ -112,4 +113,7 @@ int		verif_mob(t_game *g);
 int		verif_map_name(char **argv);
 void	get_map2(t_game *g, int i, char *line, char *map_temp);
 int		get_pass_s(t_game *g, int co_y, int co_x);
+void	verif_m_cnt(t_game *g);
+void	verif_launch(char **argv);
+void	verif_m_cnt_b(t_game *g, int argc);
 #endif

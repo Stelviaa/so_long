@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 16:59:51 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 20:33:37 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/08 18:32:53 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int	verif_min(t_game *g)
 			if (g->m_cnt[i][j] == 'C')
 				g->bool_c = 1;
 			if (g->m_cnt[i][j] == 'P')
-				g->bool_p = 1;
+				g->bool_p += 1;
 			if (g->m_cnt[i][j] == 'E')
-				g->bool_e = 1;
+				g->bool_e += 1;
 		}
 		j = 0;
 		i ++;

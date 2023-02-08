@@ -21,12 +21,14 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-		make -C libft
-		$(CC) -o $(NAME) $(OBJS) $(LIBS)
+			make -C libft
+			$(CC) -o $(NAME) $(OBJS) $(LIBS)
 
-bonus:	$(OBJS_BONUS)
-		make -C libft
-		$(CC) -o $(NAME_BONUS) $(OBJS_BONUS) $(LIBS)
+bonus: $(NAME_BONUS)
+
+$(NAME_BONUS):	$(OBJS_BONUS)
+				make -C libft
+				$(CC) -o $(NAME_BONUS) $(OBJS_BONUS) $(LIBS)
 
 debug: CFLAGS+=-g 
 debug: re

@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:50:05 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 17:22:09 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/08 18:30:35 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	get_map(t_game *g)
 	i = 0;
 	map_temp = ft_calloc(1, 1);
 	g->m_wdt_line = ft_strlen(line) - 1;
-	while (line)
+	while (line && line[0] != '\n')
 	{
 		map_temp = ft_strjoin(map_temp, line);
 		line = get_next_line(g->m_fd);
@@ -137,12 +137,13 @@ int	main(int argc, char **argv)
 		ft_printf("\033[0;31mError\033[0m\nBad numbers of arguments");
 		exit(0);
 	}
-	if (verif_map_name(argv))
-		exit (0);
+	verif_map_name(argv);
+	verif_launch(argv);
 	g = malloc(sizeof(t_game));
 	if (!g)
 		return (-1);
 	g->m_name = ft_strdup(argv[1]);
+	verif_m_cnt(g);
 	get_map(g);
 	general(g);
 	general2(g);

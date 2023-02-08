@@ -6,7 +6,7 @@
 /*   By: sforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:33:02 by sforesti          #+#    #+#             */
-/*   Updated: 2023/02/06 15:33:05 by sforesti         ###   ########.fr       */
+/*   Updated: 2023/02/07 11:21:17 by sforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ void	get_map_pathfinding(t_game *g)
 	char	*map_temp;
 
 	g->m_fd = open(g->m_name, O_RDONLY);
+	if (g->m_fd == -1)
+	{
+		ft_printf("\033[0;31mError\033[0m\nMap name not recognized\n");
+		free_error(g);
+		exit(0);
+	}
 	line = get_next_line(g->m_fd);
 	map_temp = ft_calloc(1, 1);
 	while (line)
